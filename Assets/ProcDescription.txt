@@ -1,0 +1,28 @@
+	
+	Currently this mode is only fully featured in edit mode and is a work in progress.
+
+	The following level is generated from a file editable by you, the player! If working with the editor, find the projects asset folder and there will be a file named 'ProcFile.txt'. If not then create one. Regardless this file will be used to create an algorithmically generated level.
+
+	The process used works on a mechanism called L-Systems (Lindenmyer Systems). This process allows for the creation of relatively complex fractal geometry, trees or in this case a tile based level based on the use of an input string, a context free grammar and a system analogous to turtle graphics. If the latter 2 sound unfamiliar to you (which they probably will) please feel free to look them up on Wikipedia and freshen up your knowledge of the topics.
+
+	Now that you understand those principles, the following tables summarize both the turtle controls of the system as well as the grammar that will iterate over the seed string 9 times.
+
+	Anyway, hope you enjoy and happy hunting!
+
+	Turtle controls
+		// [ store state
+		// ] pop state
+		// | go forward
+		// > rotate 45 degrees clockwise
+		// < rotate 45 counterclockwise
+
+	Context Free Grammar
+		// x place
+		// "A" ==> [x[|B]>>[|B]>>[|B]>>[|B]]
+		// "B" ==> [x[|D]>>[|C]]
+		// "C" ==> x
+		// "D" ==> [x[|E][<|F][>|F]]
+		// "E" ==> x
+		// "F" ==> [x[|G]
+		// "G" ==> [x[<<|H][>>|H]
+		// "H" ==> x
